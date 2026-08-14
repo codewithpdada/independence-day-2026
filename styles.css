@@ -1,0 +1,284 @@
+:root {
+  --saffron: #FF9933;
+  --white: #FFFFFF;
+  --green: #138808;
+  --navy: #000080;
+  --dark-bg: #0b0f19;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--dark-bg);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Background Glow Effects */
+.glow-container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.glow-saffron {
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 153, 51, 0.25) 0%, transparent 70%);
+  filter: blur(80px);
+}
+
+.glow-green {
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(19, 136, 8, 0.25) 0%, transparent 70%);
+  filter: blur(80px);
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: var(--saffron);
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  backdrop-filter: blur(5px);
+}
+
+h1.title {
+  font-family: 'Teko', sans-serif;
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: 2px;
+  background: linear-gradient(180deg, var(--saffron) 30%, var(--white) 50%, var(--green) 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Waving Flag Animation Container */
+.flag-stage {
+  position: relative;
+  width: 320px;
+  height: 220px;
+  margin: 20px 0;
+  perspective: 1000px;
+}
+
+/* Flag Pole */
+.pole {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 10px;
+  height: 380px;
+  background: linear-gradient(90deg, #888, #fff, #444);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  z-index: 10;
+}
+
+.pole-top {
+  position: absolute;
+  top: -15px;
+  left: -5px;
+  width: 20px;
+  height: 20px;
+  background: gold;
+  border-radius: 50%;
+  box-shadow: 0 0 10px gold;
+}
+
+/* Flag Cloth with Wave Effect */
+.flag {
+  width: 300px;
+  height: 180px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  transform-origin: left;
+  animation: wave 3s ease-in-out infinite alternate;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%);
+}
+
+.stripe {
+  flex: 1;
+  width: 100%;
+  position: relative;
+}
+
+.saffron { background-color: var(--saffron); }
+.white { 
+  background-color: var(--white); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.green { background-color: var(--green); }
+
+/* Animated Ashoka Chakra */
+.chakra {
+  width: 55px;
+  height: 55px;
+  border: 2px solid var(--navy);
+  border-radius: 50%;
+  position: relative;
+  animation: spin 10s linear infinite;
+}
+
+.chakra .spoke {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--navy);
+  transform-origin: center;
+}
+
+/* CSS Keyframe Animations */
+@keyframes wave {
+  0% {
+    transform: rotateY(0deg) skewY(0deg);
+  }
+  50% {
+    transform: rotateY(15deg) skewY(2deg) scaleY(1.02);
+  }
+  100% {
+    transform: rotateY(-5deg) skewY(-1deg);
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Interactive Buttons */
+.btn-group {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 140px;
+}
+
+.btn {
+  padding: 14px 32px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-hoist {
+  background: linear-gradient(45deg, var(--saffron), #ff7700);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(255, 153, 51, 0.4);
+}
+
+.btn-hoist:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 153, 51, 0.6);
+}
+
+.btn-music {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+.btn-music:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Personal Wish Card Section */
+.interactive-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 500px;
+  width: 90%;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.interactive-card input {
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.3);
+  color: #fff;
+  font-size: 1rem;
+  margin: 15px 0;
+  outline: none;
+  text-align: center;
+}
+
+.interactive-card input:focus {
+  border-color: var(--saffron);
+}
+
+.greeting-output {
+  font-size: 1.2rem;
+  margin-top: 15px;
+  font-weight: 600;
+  color: var(--saffron);
+  min-height: 30px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
