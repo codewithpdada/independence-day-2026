@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy 80th Independence Day 2026 | Celebrate India</title>
+  
+  <!-- Google Fonts & Canvas Confetti Library -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Teko:wght@700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Ambient Glow Background -->
+  <div class="glow-container">
+    <div class="glow-saffron"></div>
+    <div class="glow-green"></div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="badge">15th August 2026</div>
+    <h1 class="title">Happy 80th<br>Independence Day</h1>
+
+    <!-- Graphical Flag & Pole -->
+    <div class="flag-stage">
+      <div class="pole">
+        <div class="pole-top"></div>
+      </div>
+      <div class="flag" id="indianFlag">
+        <div class="stripe saffron"></div>
+        <div class="stripe white">
+          <div class="chakra" id="chakra"></div>
+        </div>
+        <div class="stripe green"></div>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="btn-group">
+      <button class="btn btn-hoist" id="hoistBtn">
+        🚀 Celebrate & Hoist
+      </button>
+      <button class="btn btn-music" id="musicBtn">
+        🎵 Play Anthem / Audio
+      </button>
+    </div>
+
+    <!-- Interactive Greeting Generator -->
+    <div class="interactive-card">
+      <h3>Generate Your Celebration Badge</h3>
+      <input type="text" id="userName" placeholder="Enter your name..." />
+      <div class="greeting-output" id="greetingMessage"></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Designed with Pride for India | 15 August 2026</p>
+  </footer>
+
+  <!-- Audio Element -->
+  <audio id="patrioticAudio" loop src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=fanfare-3-112696.mp3"></audio>
+
+  <!-- External Script -->
+  <script src="script.js"></script>
+</body>
+</html>
