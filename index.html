@@ -1,70 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy 80th Independence Day 2026 | Celebrate India</title>
-  
-  <!-- Google Fonts & Canvas Confetti Library -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Teko:wght@700&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
-  <!-- External Stylesheet -->
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 80th Independence Day 2026 | Created by Pratham</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Rozha+One&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Ambient Glow Background -->
-  <div class="glow-container">
-    <div class="glow-saffron"></div>
-    <div class="glow-green"></div>
-  </div>
+    <!-- Falling Petals Canvas Overlay -->
+    <canvas id="petalCanvas"></canvas>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="badge">15th August 2026</div>
-    <h1 class="title">Happy 80th<br>Independence Day</h1>
-
-    <!-- Graphical Flag & Pole -->
-    <div class="flag-stage">
-      <div class="pole">
-        <div class="pole-top"></div>
-      </div>
-      <div class="flag" id="indianFlag">
-        <div class="stripe saffron"></div>
-        <div class="stripe white">
-          <div class="chakra" id="chakra"></div>
+    <!-- Header Section -->
+    <header class="navbar">
+        <div class="logo">
+            <span class="orange-text">Tiranga</span><span class="green-text">2026</span>
         </div>
-        <div class="stripe green"></div>
-      </div>
-    </div>
+        <div class="creator-badge">
+            Designed by <strong>Pratham</strong>
+        </div>
+    </header>
 
-    <!-- Action Buttons -->
-    <div class="btn-group">
-      <button class="btn btn-hoist" id="hoistBtn">
-        🚀 Celebrate & Hoist
-      </button>
-      <button class="btn btn-music" id="musicBtn">
-        🎵 Play Anthem / Audio
-      </button>
-    </div>
+    <!-- Main Hero & Flag Hoisting Stage -->
+    <section class="hero-section">
+        <div class="hero-header">
+            <span class="badge">15th August 2026 • 80th Independence Day</span>
+            <h1 class="main-title">Salute To The Nation</h1>
+            <p class="subtitle">Experience the virtual flag hoisting ceremony crafted with pride.</p>
+        </div>
 
-    <!-- Interactive Greeting Generator -->
-    <div class="interactive-card">
-      <h3>Generate Your Celebration Badge</h3>
-      <input type="text" id="userName" placeholder="Enter your name..." />
-      <div class="greeting-output" id="greetingMessage"></div>
-    </div>
-  </section>
+        <div class="stage-container">
+            <!-- Flag Pole & Flag Structure -->
+            <div class="flagpole-wrapper">
+                <div class="finial"></div>
+                <div class="pole">
+                    <div class="rope" id="rope"></div>
+                    <!-- Flag -->
+                    <div class="flag" id="flag">
+                        <div class="stripe saffron"></div>
+                        <div class="stripe white">
+                            <div class="chakra">
+                                <!-- 24-spoke Ashoka Chakra SVG -->
+                                <svg viewBox="0 0 100 100" class="chakra-svg">
+                                    <circle cx="50" cy="50" r="45" fill="none" stroke="#000080" stroke-width="4"/>
+                                    <circle cx="50" cy="50" r="8" fill="#000080"/>
+                                    <g stroke="#000080" stroke-width="2">
+                                        <!-- 24 spokes generated -->
+                                        <line x1="50" y1="50" x2="50" y2="5"/>
+                                        <line x1="50" y1="50" x2="50" y2="95"/>
+                                        <line x1="50" y1="50" x2="5" y2="50"/>
+                                        <line x1="50" y1="50" x2="95" y2="50"/>
+                                        <line x1="50" y1="50" x2="18.2" y2="18.2"/>
+                                        <line x1="50" y1="50" x2="81.8" y2="81.8"/>
+                                        <line x1="50" y1="50" x2="81.8" y2="18.2"/>
+                                        <line x1="50" y1="50" x2="18.2" y2="81.8"/>
+                                        <line x1="50" y1="50" x2="28.3" y2="8.6"/>
+                                        <line x1="50" y1="50" x2="71.7" y2="91.4"/>
+                                        <line x1="50" y1="50" x2="91.4" y2="28.3"/>
+                                        <line x1="50" y1="50" x2="8.6" y2="71.7"/>
+                                        <line x1="50" y1="50" x2="71.7" y2="8.6"/>
+                                        <line x1="50" y1="50" x2="28.3" y2="91.4"/>
+                                        <line x1="50" y1="50" x2="91.4" y2="71.7"/>
+                                        <line x1="50" y1="50" x2="8.6" y2="28.3"/>
+                                        <line x1="50" y1="50" x2="38.3" y2="5.4"/>
+                                        <line x1="50" y1="50" x2="61.7" y2="94.6"/>
+                                        <line x1="50" y1="50" x2="94.6" y2="38.3"/>
+                                        <line x1="50" y1="50" x2="5.4" y2="61.7"/>
+                                        <line x1="50" y1="50" x2="61.7" y2="5.4"/>
+                                        <line x1="50" y1="50" x2="38.3" y2="94.6"/>
+                                        <line x1="50" y1="50" x2="94.6" y2="61.7"/>
+                                        <line x1="50" y1="50" x2="5.4" y2="38.3"/>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="stripe green"></div>
+                    </div>
+                </div>
+                <div class="pedestal">
+                    <div class="step step-3"></div>
+                    <div class="step step-2"></div>
+                    <div class="step step-1"></div>
+                </div>
+            </div>
 
-  <footer>
-    <p>MADE BY PRATHAM DADA | 15 August 2026</p>
-  </footer>
+            <!-- Controls Panel -->
+            <div class="control-box">
+                <h2>Virtual Flag Hoisting</h2>
+                <p>Click the button below to hoist the Indian National Flag, trigger the flower petal shower, and play the national salute.</p>
+                <button id="hoistBtn" class="btn-hoist">
+                    <span class="btn-icon">🚩</span> Hoist The Flag
+                </button>
+                <div id="statusText" class="status-message">Press the button to begin...</div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Audio Element -->
-  <audio id="patrioticAudio" loop src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=fanfare-3-112696.mp3"></audio>
+    <!-- Meaning of Tricolor Section -->
+    <section class="info-section">
+        <h2 class="section-title">The Pride of the Tricolor</h2>
+        <div class="cards-grid">
+            <div class="card saffron-card">
+                <div class="card-icon">🔥</div>
+                <h3>Saffron</h3>
+                <p>Represents courage, strength, and selflessness for the service of the nation.</p>
+            </div>
+            <div class="card white-card">
+                <div class="card-icon">☸️</div>
+                <h3>White & Chakra</h3>
+                <p>Symbolizes peace, truth, and eternal progress governed by 24 virtues of righteousness.</p>
+            </div>
+            <div class="card green-card">
+                <div class="card-icon">🌱</div>
+                <h3>Green</h3>
+                <p>Signifies faith, fertility, growth, and the rich auspiciousness of our soil.</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- External Script -->
-  <script src="script.js"></script>
+    <!-- Interactive Pledge Generator -->
+    <section class="pledge-section">
+        <div class="pledge-box">
+            <h2>Take Your Digital Independence Pledge</h2>
+            <p>Enter your name to generate your personalized 2026 Honor Card:</p>
+            <div class="input-group">
+                <input type="text" id="userName" placeholder="Enter your name..." maxlength="30">
+                <button id="generatePledgeBtn" class="btn-secondary">Generate Card</button>
+            </div>
+            <div id="pledgeCard" class="pledge-card hidden">
+                <div class="card-inner">
+                    <span class="watermark">INDIA 2026</span>
+                    <h3>Pledge of Patriotism</h3>
+                    <p class="pledge-text">"I, <span id="displayName" class="highlight-name">Citizen</span>, solemnly pledge to contribute to the progress, unity, and harmony of my beloved nation India."</p>
+                    <div class="card-footer">
+                        <span>15th August 2026</span>
+                        <span>Crafted by Pratham</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>🇮🇳 Celebrating 80 Years of Freedom • 15th August 2026 🇮🇳</p>
+        <p class="credit">Website Designed & Developed with ❤️ by <strong>Pratham</strong></p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
